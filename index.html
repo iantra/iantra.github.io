@@ -49,12 +49,7 @@
         box-shadow: 0 0 0 1px white;
       }
 
-      .cursor,
-      #cd:after,
-      #whoami:after,
-      #cat:after,
-      #tree:after {
-        content: "|";
+      .cursor {
         overflow: hidden;
         color: white;
         animation: blink 500ms steps(1, end) infinite;
@@ -130,9 +125,9 @@
   </head>
   <body>
     <div id="content">
-      <span id="prompt"></span> <br />
-      <br />
-      <span id="options"></span> <br />
+      <span id="prompt"></span>
+      <br /><br />
+      <span id="options"></span>
 
       <script type="text/javascript">
         function getBrowser() {
@@ -238,9 +233,9 @@
 
         const promptDelay = parseDelay("50"),
           optionsDelay = parseDelay("35");
-        const typeeffetct = async () => {
+        const typeeffect = async () => {
           await typewriter(
-            "\u003cspan id=\u0027terminal\u0027\u003e\u003cp\u003eYou open a website.\u003cbr\u003e\nThe page has a dark background upon which a white text prompt gradually appears.\u003cbr\u003e\nYou are intrigued, but there seems to be an odd lack of interactive elements.\u003c\/p\u003e\n\u003c\/span\u003e",
+            "You open a website.\u003cbr\u003e\nThe page has a dark background upon which a white text prompt gradually appears.\u003cbr\u003e\nYou are intrigued, but there seems to be an odd lack of interactive elements.\n",
             "prompt",
             promptDelay,
             1000,
@@ -256,7 +251,7 @@
           return;
         };
 
-        typeeffetct();
+        typeeffect();
       </script>
     </div>
   </body>
