@@ -49,12 +49,7 @@
         box-shadow: 0 0 0 1px white;
       }
 
-      .cursor,
-      #cd:after,
-      #whoami:after,
-      #cat:after,
-      #tree:after {
-        content: "|";
+      .cursor {
         overflow: hidden;
         color: white;
         animation: blink 500ms steps(1, end) infinite;
@@ -130,9 +125,9 @@
   </head>
   <body>
     <div id="content">
-      <span id="prompt"></span> <br />
-      <br />
-      <span id="options"></span> <br />
+      <span id="prompt"></span>
+      <br /><br />
+      <span id="options"></span>
 
       <script type="text/javascript">
         function getBrowser() {
@@ -238,9 +233,9 @@
 
         const promptDelay = parseDelay("50"),
           optionsDelay = parseDelay("35");
-        const typeeffetct = async () => {
+        const typeeffect = async () => {
           await typewriter(
-            "\u003cspan id=\u0027terminal\u0027\u003e\u003cp\u003eHow did you even get this far?\u003c\/p\u003e\n\u003c\/span\u003e",
+            "How did you even get this far?\n",
             "prompt",
             promptDelay,
             1000,
@@ -256,26 +251,8 @@
           return;
         };
 
-        typeeffetct();
+        typeeffect();
       </script>
     </div>
-
-    <span class="navFull">
-      <span>
-        <a href="/">Home</a>
-        <span>&#8192;|&#8192;</span>
-        <a href="./..">/</a>
-      </span>
-
-      <span class="navCredits">
-        Hugo theme created by
-        <a
-          href="https://github.com/Yukuro/hugo-theme-shell"
-          target="_blank"
-          rel="noopener"
-          >Yukuro</a
-        >
-      </span>
-    </span>
   </body>
 </html>

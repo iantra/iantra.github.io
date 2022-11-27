@@ -8,13 +8,22 @@
     <language>en-us</language><atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
-      <link>http://example.org/index.html/</link>
+      <link>http://example.org/404.html</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/index.html/</guid>
+      <guid>http://example.org/404.html</guid>
       <description>You open a website.
 The page has a dark background upon which a white text prompt gradually appears.
 You are intrigued, but there seems to be an odd lack of interactive elements.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://example.org/prompt2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/prompt2/</guid>
+      <description>How did you even get this far?</description>
     </item>
     
   </channel>
