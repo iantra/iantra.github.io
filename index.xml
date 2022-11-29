@@ -12,17 +12,25 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>http://example.org/404.html</guid>
-      <description>You open a website.
-The page has a dark background upon which a white text prompt gradually appears.
-You are intrigued, but there seems to be an odd lack of interactive elements.</description>
+      <description>You are lost.</description>
     </item>
     
     <item>
       <title></title>
-      <link>http://example.org/prompt2/</link>
+      <link>http://example.org/inventory/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/prompt2/</guid>
+      <guid>http://example.org/inventory/</guid>
+      <description>You reach into your pockets.
+Unfortunately, it seems they are empty at this time.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>http://example.org/room_1/description/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/room_1/description/</guid>
       <description>How did you even get this far?</description>
     </item>
     

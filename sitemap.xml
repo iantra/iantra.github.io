@@ -6,9 +6,13 @@
   </url><url>
     <loc>http://example.org/</loc>
   </url><url>
-    <loc>http://example.org/prompt2/</loc>
+    <loc>http://example.org/inventory/</loc>
+  </url><url>
+    <loc>http://example.org/room_1/description/</loc>
   </url><url>
     <loc>http://example.org/categories/</loc>
+  </url><url>
+    <loc>http://example.org/room_1/</loc>
   </url><url>
     <loc>http://example.org/tags/</loc>
   </url>
