@@ -8,7 +8,27 @@
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Inconsolata&display=swap");
       :root {
-        --cursor-visibility: hidden;
+        --background-brown: #292520;
+        --foreground-brown: #e5c7a9;
+        --outside-brown: #2f2a24;
+        --background-purple: #300a24;
+        --foreground-purple: #ffffff;
+        --outside-purple: #380c2a;
+        --background-nord: #2e3440;
+        --foreground-nord: #d8dee9;
+        --outside-nord: #323946;
+        --background-bright: #f7f7f7;
+        --foreground-bright: #4a4543;
+        --outside-bright: #f2f2f2;
+        --background-blue: #211f46;
+        --foreground-blue: #ffffff;
+        --outside-blue: #24224d;
+      }
+
+      :root {
+        --background: var(--background-nord);
+        --foreground: var(--foreground-nord);
+        --outside: var(--outside-nord);
       }
 
       html,
@@ -23,16 +43,40 @@
       }
 
       body {
+        background-color: var(--outside);
         margin: 0;
         display: flex;
         flex-direction: row;
         justify-content: center;
-        align-items: center;
+      }
+
+      h1 {
+        display: inline;
+        line-height: 1.5;
+        font-size: 1.5em;
+      }
+
+      a {
+        cursor: pointer;
+        text-decoration: underline;
+        color: var(--foreground);
+      }
+
+      #terminal {
+        color: var(--foreground);
+      }
+
+      .cursor {
+        color: var(--foreground);
       }
 
       #content {
-        width: 30vw;
-        height: 30vw;
+        width: 50vw;
+        margin-top: 20vh;
+        margin-bottom: 30vh;
+        border-radius: 1vw;
+        background-color: var(--background);
+        padding: 2vw;
       }
 
       ::-webkit-scrollbar {
@@ -51,7 +95,6 @@
 
       .cursor {
         overflow: hidden;
-        color: white;
         animation: blink 500ms steps(1, end) infinite;
       }
 
@@ -76,26 +119,6 @@
           min-width: 60vmin;
         }
       }
-
-      body {
-        background: #1b1d1e;
-      }
-      body #terminal {
-        color: #bbbbbb;
-      }
-      body #user {
-        color: #23e298;
-      }
-      body #dir {
-        color: #d08010;
-      }
-      body .Typewriter__cursor {
-        color: #bbbbbb;
-      }
-      a {
-        color: #bbbbbb;
-      }
-
       .navFull {
         background-color: #353535;
         font-family: "Courier New";

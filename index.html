@@ -9,7 +9,27 @@
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Inconsolata&display=swap");
       :root {
-        --cursor-visibility: hidden;
+        --background-brown: #292520;
+        --foreground-brown: #e5c7a9;
+        --outside-brown: #2f2a24;
+        --background-purple: #300a24;
+        --foreground-purple: #ffffff;
+        --outside-purple: #380c2a;
+        --background-nord: #2e3440;
+        --foreground-nord: #d8dee9;
+        --outside-nord: #323946;
+        --background-bright: #f7f7f7;
+        --foreground-bright: #4a4543;
+        --outside-bright: #f2f2f2;
+        --background-blue: #211f46;
+        --foreground-blue: #ffffff;
+        --outside-blue: #24224d;
+      }
+
+      :root {
+        --background: var(--background-nord);
+        --foreground: var(--foreground-nord);
+        --outside: var(--outside-nord);
       }
 
       html,
@@ -24,16 +44,40 @@
       }
 
       body {
+        background-color: var(--outside);
         margin: 0;
         display: flex;
         flex-direction: row;
         justify-content: center;
-        align-items: center;
+      }
+
+      h1 {
+        display: inline;
+        line-height: 1.5;
+        font-size: 1.5em;
+      }
+
+      a {
+        cursor: pointer;
+        text-decoration: underline;
+        color: var(--foreground);
+      }
+
+      #terminal {
+        color: var(--foreground);
+      }
+
+      .cursor {
+        color: var(--foreground);
       }
 
       #content {
-        width: 30vw;
-        height: 30vw;
+        width: 50vw;
+        margin-top: 20vh;
+        margin-bottom: 30vh;
+        border-radius: 1vw;
+        background-color: var(--background);
+        padding: 2vw;
       }
 
       ::-webkit-scrollbar {
@@ -52,7 +96,6 @@
 
       .cursor {
         overflow: hidden;
-        color: white;
         animation: blink 500ms steps(1, end) infinite;
       }
 
@@ -77,26 +120,6 @@
           min-width: 60vmin;
         }
       }
-
-      body {
-        background: #1b1d1e;
-      }
-      body #terminal {
-        color: #bbbbbb;
-      }
-      body #user {
-        color: #23e298;
-      }
-      body #dir {
-        color: #d08010;
-      }
-      body .Typewriter__cursor {
-        color: #bbbbbb;
-      }
-      a {
-        color: #bbbbbb;
-      }
-
       .navFull {
         background-color: #353535;
         font-family: "Courier New";
@@ -182,11 +205,17 @@
         ) {
           var n = 0;
           var isTag = false;
+          var isEscaped = false;
           const el = document.getElementById(elementId);
 
           var terminal = document.createElement("span");
           terminal.setAttribute("id", "terminal");
           el.appendChild(terminal);
+
+          if (letterDelay == 0) {
+            terminal.innerHTML = text;
+            return;
+          }
 
           var cursor = document.createElement("span");
           cursor.setAttribute("class", "cursor");
@@ -201,26 +230,20 @@
           await wait(waitBefore);
           while (n < text.length) {
             var nextChar = text.charAt(n);
-            if (nextChar === "<" || nextChar === "&") {
-              isTag = true;
-            }
-            if (nextChar === ">" || nextChar === ";") {
-              isTag = false;
-            }
 
-            if (isTag) {
-              n++;
+            var idx = -1;
+            if (nextChar === "<") idx = text.indexOf(">", n);
+            if (nextChar === "&") idx = text.indexOf(";", n);
+
+            if (idx != -1) {
+              n = idx;
               continue;
             }
 
             if (text.slice(n - 3, n + 1) === "<br>") await wait(lineDelay);
 
             requestAnimationFrame(render);
-
-            if (letterDelay > 0) {
-              await wait(letterDelay);
-            }
-
+            await wait(letterDelay);
             n++;
           }
           cursor.style.setProperty("visibility", "collapse");
@@ -232,18 +255,21 @@
           return parsed;
         }
 
-        const promptDelay = parseDelay("50"),
-          optionsDelay = parseDelay("35");
+        const promptDelay = parseDelay("0"),
+          optionsDelay = parseDelay("0");
         const typeeffect = async () => {
+          console.log(
+            "\u003ch1 id=\u0022an-interactive-portfolio-adventure\u0022\u003eAn Interactive Portfolio Adventure\u003c\/h1\u003e\u003cbr\u003e\nBy iantra\n"
+          );
           await typewriter(
-            "You open a website.\u003cbr\u003e\nThe page has a dark background upon which a white text prompt gradually appears.\u003cbr\u003e\nYou are intrigued, but there seems to be an odd lack of interactive elements.\n",
+            "\u003ch1 id=\u0022an-interactive-portfolio-adventure\u0022\u003eAn Interactive Portfolio Adventure\u003c\/h1\u003e\u003cbr\u003e\nBy iantra\n",
             "prompt",
             promptDelay,
             1000,
             2000
           );
           await typewriter(
-            " \u003ca href=\u0027\/room_1\/description\u0027\u003elook around\u003c\/a\u003e \u0026nbsp; \u003ca href=\u0027\/inventory\u0027\u003echeck inventory\u003c\/a\u003e \u0026nbsp;",
+            " \u003ca onclick=\u0022window.location=\u0027\/intro\u0027\u002bwindow.location.search;\u0022\u003ejump in\u003c\/a\u003e \u0026nbsp; \u003ca onclick=\u0022window.location=\u0027\/about\u0027\u002bwindow.location.search;\u0022\u003elearn more\u003c\/a\u003e \u0026nbsp; \u003ca onclick=\u0022window.location=\u0027\/styles\u0027\u002bwindow.location.search;\u0022\u003echoose a look\u003c\/a\u003e \u0026nbsp;",
             "options",
             optionsDelay,
             1000,
@@ -253,6 +279,34 @@
         };
 
         typeeffect();
+      </script>
+
+      <script type="text/javascript">
+        const params = new Proxy(new URLSearchParams(window.location.search), {
+          get: (searchParams, prop) => searchParams.get(prop),
+        });
+
+        if (params.theme) {
+          console.log(params.theme);
+          document.documentElement.style.setProperty(
+            "--background",
+            getComputedStyle(document.documentElement).getPropertyValue(
+              "--background-" + params.theme
+            )
+          );
+          document.documentElement.style.setProperty(
+            "--foreground",
+            getComputedStyle(document.documentElement).getPropertyValue(
+              "--foreground-" + params.theme
+            )
+          );
+          document.documentElement.style.setProperty(
+            "--outside",
+            getComputedStyle(document.documentElement).getPropertyValue(
+              "--outside-" + params.theme
+            )
+          );
+        }
       </script>
     </div>
   </body>

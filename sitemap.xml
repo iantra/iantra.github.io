@@ -6,9 +6,13 @@
   </url><url>
     <loc>http://example.org/</loc>
   </url><url>
+    <loc>http://example.org/intro/</loc>
+  </url><url>
     <loc>http://example.org/inventory/</loc>
   </url><url>
     <loc>http://example.org/room_1/description/</loc>
+  </url><url>
+    <loc>http://example.org/styles/</loc>
   </url><url>
     <loc>http://example.org/categories/</loc>
   </url><url>
