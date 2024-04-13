@@ -254,8 +254,8 @@
           return parsed;
         }
 
-        const promptDelay = parseDelay("0"),
-          optionsDelay = parseDelay("0");
+        const promptDelay = parseDelay("35"),
+          optionsDelay = parseDelay("25");
         const typeeffect = async () => {
           console.log(
             "\r\n \u003ca href=\u0027?theme=brown\u0027 style=\u0027padding: 10px; background-color: #292520; color: #e5c7a9; min-width: 2vw;\u0027\u003eBrownie\u003c\/a\u003e  \u003ca href=\u0027?theme=purple\u0027 style=\u0027padding: 10px; background-color: #300a24; color: #ffffff; min-width: 2vw;\u0027\u003eFoxy Fuchsia\u003c\/a\u003e  \u003ca href=\u0027?theme=nord\u0027 style=\u0027padding: 10px; background-color: #2E3440; color: #D8DEE9; min-width: 2vw;\u0027\u003eNot Nord\u003c\/a\u003e  \u003ca href=\u0027?theme=bright\u0027 style=\u0027padding: 10px; background-color: #f7f7f7; color: #4a4543; min-width: 2vw;\u0027\u003eQuite Bright\u003c\/a\u003e  \u003ca href=\u0027?theme=blue\u0027 style=\u0027padding: 10px; background-color: #211f46; color: #ffffff; min-width: 2vw;\u0027\u003eToo Blue\u003c\/a\u003e \u003cbr\u003e"
@@ -265,14 +265,14 @@
             "prompt",
             promptDelay,
             1000,
-            2000
+            1000
           );
           await typewriter(
             " \u003ca onclick=\u0022window.location=\u0027\/\u0027\u002bwindow.location.search;\u0022\u003ego back\u003c\/a\u003e \u0026nbsp;",
             "options",
             optionsDelay,
             1000,
-            3000
+            2000
           );
           return;
         };

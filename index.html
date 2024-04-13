@@ -255,8 +255,8 @@
           return parsed;
         }
 
-        const promptDelay = parseDelay("0"),
-          optionsDelay = parseDelay("0");
+        const promptDelay = parseDelay("35"),
+          optionsDelay = parseDelay("25");
         const typeeffect = async () => {
           console.log(
             "\u003ch1 id=\u0022an-interactive-portfolio-adventure\u0022\u003eAn Interactive Portfolio Adventure\u003c\/h1\u003e\u003cbr\u003e\nBy iantra\n"
@@ -266,14 +266,14 @@
             "prompt",
             promptDelay,
             1000,
-            2000
+            1000
           );
           await typewriter(
             " \u003ca onclick=\u0022window.location=\u0027\/intro\u0027\u002bwindow.location.search;\u0022\u003ejump in\u003c\/a\u003e \u0026nbsp; \u003ca onclick=\u0022window.location=\u0027\/about\u0027\u002bwindow.location.search;\u0022\u003elearn more\u003c\/a\u003e \u0026nbsp; \u003ca onclick=\u0022window.location=\u0027\/styles\u0027\u002bwindow.location.search;\u0022\u003echoose a look\u003c\/a\u003e \u0026nbsp;",
             "options",
             optionsDelay,
             1000,
-            3000
+            2000
           );
           return;
         };

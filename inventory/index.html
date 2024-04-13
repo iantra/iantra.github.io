@@ -254,8 +254,8 @@
           return parsed;
         }
 
-        const promptDelay = parseDelay("0"),
-          optionsDelay = parseDelay("0");
+        const promptDelay = parseDelay("35"),
+          optionsDelay = parseDelay("25");
         const typeeffect = async () => {
           console.log(
             "You reach into your pockets.\u003cbr\u003e\nUnfortunately, it seems they are empty at this time.\n"
@@ -265,14 +265,14 @@
             "prompt",
             promptDelay,
             1000,
-            2000
+            1000
           );
           await typewriter(
             " \u003ca onclick=\u0022window.location=\u0027\/room_1\/description\u0027\u002bwindow.location.search;\u0022\u003elook around\u003c\/a\u003e \u0026nbsp;",
             "options",
             optionsDelay,
             1000,
-            3000
+            2000
           );
           return;
         };

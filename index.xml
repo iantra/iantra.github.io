@@ -17,6 +17,16 @@
     
     <item>
       <title></title>
+      <link>http://example.org/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://example.org/about/</guid>
+      <description>This is a small interactive adventure I&amp;rsquo;ve created to act as a portfolio of sorts.
+Made using HUGO with a custom theme based on this terminal theme.</description>
+    </item>
+    
+    <item>
+      <title></title>
       <link>http://example.org/intro/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       

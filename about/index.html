@@ -257,16 +257,18 @@
         const promptDelay = parseDelay("35"),
           optionsDelay = parseDelay("25");
         const typeeffect = async () => {
-          console.log("You are lost.\n");
+          console.log(
+            "This is a small interactive adventure I\u0026rsquo;ve created to act as a portfolio of sorts.\nMade using \u003ca href=\u0022https:\/\/gohugo.io\/\u0022\u003eHUGO\u003c\/a\u003e with a custom theme based on \u003ca href=\u0022https:\/\/github.com\/Yukuro\/hugo-theme-shell\u0022\u003ethis terminal theme\u003c\/a\u003e.\n"
+          );
           await typewriter(
-            "You are lost.\n",
+            "This is a small interactive adventure I\u0026rsquo;ve created to act as a portfolio of sorts.\nMade using \u003ca href=\u0022https:\/\/gohugo.io\/\u0022\u003eHUGO\u003c\/a\u003e with a custom theme based on \u003ca href=\u0022https:\/\/github.com\/Yukuro\/hugo-theme-shell\u0022\u003ethis terminal theme\u003c\/a\u003e.\n",
             "prompt",
             promptDelay,
             1000,
             1000
           );
           await typewriter(
-            " \u003ca onclick=\u0022window.location=\u0027\/\u0027\u002bwindow.location.search;\u0022\u003ereturn to safety\u003c\/a\u003e \u0026nbsp; \u003ca onclick=\u0022window.location=\u0027404\u0027\u002bwindow.location.search;\u0022\u003estay a while longer\u003c\/a\u003e \u0026nbsp;",
+            " \u003ca onclick=\u0022window.location=\u0027\/\u0027\u002bwindow.location.search;\u0022\u003ego back\u003c\/a\u003e \u0026nbsp;",
             "options",
             optionsDelay,
             1000,
